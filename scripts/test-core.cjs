@@ -247,28 +247,26 @@ const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
     `NaN ${sanity.nan}，超距 ${sanity.far.length}${sanity.far.length ? ':' + sanity.far.slice(0, 3) : ''}`);
 
   /* ---------- 6. 暂停 / 继续 / 反向 ----------
-     用 app.stepWorld(0.05, N) 推进固定帧数，不依赖 rAF 帧率。
-     CI 无 GPU 时 dt 被 clamp 到 50 ms，wall-clock 等待会随机器性能漂移。 */
-  await page.evaluate(() => { const a = window.__APP__; a.explode.setProgress(0.2); a.explode.play(1); a.stepWorld(0.05, 18); });
-  await page.evaluate(() => window.__APP__.explode.pause());
-  const pp1 = await page.evaluate(() => window.__APP__.explode.progress);
-  await page.evaluate(() => window.__APP__.stepWorld(0.05, 12));
-  const pp2 = await page.evaluate(() => window.__APP__.explode.progress);
+     整组收进单次 evaluate：同步执行期间 rAF 没有插入机会，结果逐值确定。
+     用 app.stepWorld(0.05, N) 推进固定帧数，不依赖 rAF 帧率 —— CI 无 GPU 时
+     dt 被 clamp 到 50 ms，wall-clock 等待会随机器性能漂移。 */
+  const timing = await page.evaluate(() => {
+    const a = window.__APP__;
+    a.explode.setProgress(0.2); a.explode.play(1); a.stepWorld(0.05, 18);
+    a.explode.pause(); const pp1 = a.explode.progress;
+    a.stepWorld(0.05, 12); const pp2 = a.explode.progress;
+    a.explode.play(1); a.stepWorld(0.05, 14); const pp3 = a.explode.progress;
+    a.explode.reverse(); a.stepWorld(0.05, 14); const pp4 = a.explode.progress;
+    /* ---------- 7. 重新装配 ---------- */
+    a.explode.setProgress(1); a.explode.reassemble(); a.stepWorld(0.05, 16);
+    const rp1 = a.explode.progress;
+    a.stepWorld(0.05, 24); const rp2 = a.explode.progress;
+    return { pp1, pp2, pp3, pp4, rp1, rp2 };
+  });
+  const { pp1, pp2, pp3, pp4, rp1, rp2 } = timing;
   check('暂停后进度不再推进', Math.abs(pp2 - pp1) < 1e-9, `${pp1.toFixed(4)} → ${pp2.toFixed(4)}`);
-
-  await page.evaluate(() => { const a = window.__APP__; a.explode.play(1); a.stepWorld(0.05, 14); });
-  const pp3 = await page.evaluate(() => window.__APP__.explode.progress);
   check('继续后进度恢复推进', pp3 > pp2 + 0.02, `${pp2.toFixed(4)} → ${pp3.toFixed(4)}`);
-
-  await page.evaluate(() => { const a = window.__APP__; a.explode.reverse(); a.stepWorld(0.05, 14); });
-  const pp4 = await page.evaluate(() => window.__APP__.explode.progress);
   check('反向播放使进度回退', pp4 < pp3 - 0.02, `${pp3.toFixed(4)} → ${pp4.toFixed(4)}`);
-
-  /* ---------- 7. 重新装配 ---------- */
-  await page.evaluate(() => { const a = window.__APP__; a.explode.setProgress(1); a.explode.reassemble(); a.stepWorld(0.05, 16); });
-  const rp1 = await page.evaluate(() => window.__APP__.explode.progress);
-  await page.evaluate(() => window.__APP__.stepWorld(0.05, 24));
-  const rp2 = await page.evaluate(() => window.__APP__.explode.progress);
   check('重新装配使进度持续回落', rp2 < rp1 && rp1 < 1, `${rp1.toFixed(3)} → ${rp2.toFixed(3)}`);
   // 直接收敛到 0 后检查复位
   await page.evaluate(() => window.__APP__.explode.setProgress(0));

@@ -10,6 +10,7 @@
     "lint:geom": "node scripts/geom-lint.mjs",
     "lint:geom:json": "node scripts/geom-lint.mjs --json shots/audit.json",
     "test:core": "node scripts/test-core.cjs",
+    "test:determinism": "node scripts/test-determinism.mjs",
     "test:dist": "node scripts/test-dist.cjs",
     "test:mobile": "node scripts/test-mobile.cjs",
     "shots": "node scripts/shots.mjs",

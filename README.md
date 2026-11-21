@@ -154,20 +154,23 @@ flowchart TB
 没有这一步，CI 软件光栅与本地 GPU 的加载耗时差会让同一份模型跑出不同结论——
 这个坑正是在首次 CI 上暴露并修掉的（见 [缺陷复盘](docs/POSTMORTEM.md)）。
 
-**回归测试也不依赖机器速度**：交互回归用 `app.stepWorld(0.05, frames)` 推进固定帧数
-的仿真时间，而不是 `waitForTimeout(N)` 后断言「推进了多少」——主循环的 `dt` 被限制在
-50 ms，软件光栅 CI 上的 wall-clock 与仿真时间并不等价。这一步同样由 CI 暴露。
+**回归测试不再把机器速度当判据**：交互回归用 `app.stepWorld(0.05, frames)` 推进固定
+帧数的仿真时间，并把每组收进单次 `evaluate`，而不是 `waitForTimeout(N)` 后断言
+「推进了多少」——主循环 `dt` 被限制在 50 ms，软件光栅 CI 上的 wall-clock 与仿真时间
+并不等价。实测 rAF 正常与 rAF 完全停摆两种页面下结果逐位相同（`IDENTICAL true`）。
+这一步同样由 CI 暴露，见 [缺陷复盘 §5.1](docs/POSTMORTEM.md)。
 
 | 回归 | 结果 | 实测要点 |
 |---|---|---|
 | `test:core` | **37 / 37** | 42/186 壳体被裁剪、关键运动件被裁 0；燃机 25 件在柴油构型全隐、切回全显；正反向装配位置偏差 0.00e+0；运行期无 JS 异常 |
 | `test:dist` | **PASS** | `file://` 直接加载，186 构件、27 张贴图、952 kB、无报错 |
 | `test:mobile` | **PASS** | 390×844 无横向溢出、抽屉可开合、底栏按钮在视口内、无 pageerror |
+| `test:determinism` | **PASS** | rAF 正常 / rAF 停摆两种页面下 8 组状态推进数值逐位一致（`IDENTICAL true`） |
 | `lint:geom` | **4 / 4 PASS** | 见上表；报告 JSON 由 CI 上传为 artifact |
 
 单帧渲染实测（1600×900，`renderer.info` 口径）：**1,982 draw calls · 423,002 三角面 · 1,400 网格 · 741,480 顶点 · 27 纹理 · 49 shader programs**。这里的三角面含后处理全屏通道、粒子与多 pass 重绘，因此高于 [PARTS.md](PARTS.md) 统计的构件几何面数（255,856）——两者口径不同，不是数据冲突。
 
-CI 分两个 job：`ubuntu-latest` 构建并校验单文件无外链（出现 `src="http…"` 即失败）；`windows-latest` 跑几何门禁 + 三项回归 + 文档同步校验 + 产物回归。
+CI 分两个 job：`ubuntu-latest` 构建并校验单文件无外链（出现 `src="http…"` 即失败）；`windows-latest` 跑几何门禁 + 四项回归 + 文档同步校验 + 产物回归。
 
 ---
 
@@ -248,9 +251,9 @@ marine-propulsion-3d/
 │   ├── assemblies/            environment / diesel / cpp / shafting / gasturbine / piping
 │   ├── systems/simulation.js  运动学与联动
 │   └── ui/                    ui.js / ui.css
-├── scripts/                   geom-lint · test-core/dist/mobile · shots · export-parts/allow
+├── scripts/                   geom-lint · test-core/dist/mobile/determinism · shots · export-parts/allow
 ├── docs/                      POSTMORTEM · SKILLS-RETRO · ARCHITECTURE · AUDIT-ALLOW
-├── .github/workflows/         quality.yml（构建 + 几何门禁 + 三项回归）
+├── .github/workflows/         quality.yml（构建 + 几何门禁 + 四项回归）
 ├── shots/                     15 张展示图 + 机器可读的清单/测试报告
 ├── PARTS.md                   186 件构件清单（运行时导出）
 └── dist/index.html            单文件产物（975,121 B）

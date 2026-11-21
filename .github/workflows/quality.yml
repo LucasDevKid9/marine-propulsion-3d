@@ -81,6 +81,10 @@ jobs:
         shell: bash
         run: npm run test:core
 
+      - name: 确定性实证（rAF 正常 / 停摆逐位一致）
+        shell: bash
+        run: npm run test:determinism
+
       - name: 移动端布局回归
         shell: bash
         run: npm run test:mobile
