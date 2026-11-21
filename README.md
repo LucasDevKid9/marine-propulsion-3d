@@ -3,6 +3,7 @@
 **Marine Propulsion Anatomy** — 186 parts · 4 configurations · machine-checked geometry · one offline HTML file.
 
 [![quality](https://github.com/LucasDevKid9/marine-propulsion-3d/actions/workflows/quality.yml/badge.svg)](https://github.com/LucasDevKid9/marine-propulsion-3d/actions/workflows/quality.yml)
+[![live demo](https://img.shields.io/badge/live%20demo-Open%20in%20browser-2ea043)](https://lucasdevkid9.github.io/marine-propulsion-3d/)
 ![three.js](https://img.shields.io/badge/three.js-r187-000000?logo=threedotjs)
 ![parts](https://img.shields.io/badge/parts-186-1f6feb)
 ![geometry gate](https://img.shields.io/badge/geometry%20gate-4%2F4%20PASS-2ea043)
@@ -14,6 +15,8 @@
 > 默认总装视图：低速二冲程十字头柴油机 + CPP 可调距桨 + 艉部剖切机舱。右舷外板敞开，可直接看到轴系与艉管密封。
 
 一艘大型船舶的**艉部机舱 + 推进系统**被拆成 186 个可单独选中、隔离、爆炸的构件：6 缸二冲程十字头柴油机、CPP / FPP + 导管两套推进器、长轴系与艉管密封、可切换的船用燃气轮机模块，以及完整机舱环境与管系。几何与贴图全部程序化生成，**产物是单个 952 kB 的 HTML 文件，双击即可离线运行**。
+
+**不想装任何东西？** 直接打开 [**在线 Demo**](https://lucasdevkid9.github.io/marine-propulsion-3d/)（GitHub Pages 从 `main` 自动部署），或下载仓库里的 [`dist/index.html`](dist/index.html) 双击。两者是同一份单文件产物。
 
 ---
 

@@ -16,15 +16,15 @@ permissions:
   pages: write
   id-token: write
 
+# 官方 Pages 模板结构：build 与 deploy 分成两个 job。
+# 单 job 时 upload-pages-artifact 刚 finalize，deploy-pages 立刻查 artifact
+# 元数据会返回 "Found 0 artifact(s)"（最终一致性竞态，见 CI 日志）。
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,10 +38,18 @@ jobs:
         run: |
           mkdir -p _site
           cp dist/index.html _site/index.html
-          printf '%s\n' '# Marine Propulsion Anatomy' 'Single-file WebGL demo, see the repository README.' > _site/README.md
+          printf '%s\n' '# Marine Propulsion Anatomy' 'Single-file WebGL demo; see the repository README.' > _site/README.md
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
