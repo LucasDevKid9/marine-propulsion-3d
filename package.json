@@ -1,0 +1,40 @@
+{
+  "name": "marine-propulsion-3d",
+  "version": "2.0.0",
+  "description": "巨轮推进系统组合体三维解剖台 · 186 件构件 / 单文件离线产物 / 带几何审计门禁",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "lint:geom": "node scripts/geom-lint.mjs",
+    "lint:geom:json": "node scripts/geom-lint.mjs --json shots/audit.json",
+    "test:core": "node scripts/test-core.cjs",
+    "test:dist": "node scripts/test-dist.cjs",
+    "test:mobile": "node scripts/test-mobile.cjs",
+    "shots": "node scripts/shots.mjs",
+    "parts": "node scripts/export-parts.cjs",
+    "docs:allow": "node scripts/export-allow.mjs"
+  },
+  "keywords": [
+    "three.js",
+    "webgl",
+    "marine",
+    "propulsion",
+    "geometric-audit",
+    "single-file",
+    "cad-visualization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.49.1",
+    "vite": "^6.4.6",
+    "vite-plugin-singlefile": "^2.3.4"
+  },
+  "private": true,
+  "type": "module"
+}

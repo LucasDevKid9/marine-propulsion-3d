@@ -1,0 +1,99 @@
+name: quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: 构建单文件产物
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 文档与真值表同步校验
+        run: |
+          npm run docs:allow
+          git diff --exit-code docs/AUDIT-ALLOW.md
+      - run: npm run build
+      - name: 校验产物是单文件、无外链
+        shell: bash
+        run: |
+          set -e
+          test -f dist/index.html
+          size=$(stat -c%s dist/index.html)
+          echo "dist/index.html = $size bytes"
+          test "$size" -gt 500000
+          # 不允许出现外部 http(s) 资源引用（离线可用的前提）
+          if grep -oE '(src|href)="https?://[^"]+"' dist/index.html; then
+            echo "::error::dist 中出现外链资源，破坏离线单文件约束"
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist-single-file
+          path: dist/index.html
+
+  quality:
+    name: 几何审计门禁 + 交互回归
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: 启动 dev server
+        shell: bash
+        run: |
+          npm run dev -- --port 5173 > dev.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl -s -o /dev/null http://127.0.0.1:5173/; then echo "dev server up"; exit 0; fi
+            sleep 1
+          done
+          echo "::error::dev server 未能启动"; cat dev.log; exit 1
+
+      - name: 构件清单与运行时同步校验
+        shell: bash
+        run: |
+          npm run parts
+          git diff --exit-code PARTS.md shots/parts.json
+
+      - name: 几何审计（四构型门禁）
+        shell: bash
+        run: npm run lint:geom
+
+      - name: 交互与联动回归（37 项）
+        shell: bash
+        run: npm run test:core
+
+      - name: 移动端布局回归
+        shell: bash
+        run: npm run test:mobile
+
+      - name: 单文件产物回归
+        shell: bash
+        run: |
+          npm run build
+          npx vite preview --port 4173 > preview.log 2>&1 &
+          for i in $(seq 1 40); do
+            if curl -s -o /dev/null http://127.0.0.1:4173/; then break; fi
+            sleep 1
+          done
+          npm run test:dist
+
+      - name: 上传审计报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-report
+          path: shots/audit.json
+          if-no-files-found: ignore

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>巨轮推进系统 · 组合体三维解剖台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23050a12'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%234fd8f0' stroke-width='2'/%3E%3Cpath d='M16 3v6M16 23v6M3 16h6M23 16h6' stroke='%234fd8f0' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23ff9a3c'/%3E%3C/svg%3E">
+  <meta name="description" content="大型低速二冲程柴油机 + 可调距桨 / 定距桨轴系 + 燃气轮机推进模块的三维交互解剖展示" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene"></canvas>
+
+    <!-- 加载幕 -->
+    <div id="boot">
+      <div class="boot-inner">
+        <div class="boot-kicker">MARINE PROPULSION COMPLEX</div>
+        <h1>巨轮推进系统 · 组合体</h1>
+        <p class="boot-sub">低速二冲程主机 / 可调距桨 / 长轴系 / 燃气轮机替代构型</p>
+        <div class="boot-bar"><i></i></div>
+        <div class="boot-status">正在装配构件树…</div>
+      </div>
+    </div>
+
+    <header id="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <div class="brand-text">
+          <b>巨轮推进系统</b>
+          <i>PROPULSION COMPLEX · 3D SECTION</i>
+        </div>
+      </div>
+
+      <nav class="modes" id="modes">
+        <button class="mode-btn active" data-mode="assembly"><span class="lbl-full">装配视图</span><span class="lbl-short">装配</span></button>
+        <button class="mode-btn" data-mode="explode"><span class="lbl-full">爆炸视图</span><span class="lbl-short">爆炸</span></button>
+        <button class="mode-btn" data-mode="section"><span class="lbl-full">剖切视图</span><span class="lbl-short">剖切</span></button>
+      </nav>
+
+      <div class="top-actions">
+        <button class="chip-btn" id="btn-flow" title="显示气流路径">气流</button>
+        <button class="chip-btn" id="btn-labels" title="显示悬浮标签">标签</button>
+        <button class="chip-btn" id="btn-xray" title="壳体半透明">透视</button>
+        <button class="chip-btn mobile-only" id="btn-panel-left">构件</button>
+        <button class="chip-btn mobile-only" id="btn-panel-right">控制</button>
+        <span class="fps" id="fps">-- FPS</span>
+      </div>
+    </header>
+
+    <!-- 左侧构件树 -->
+    <aside id="panel-left" class="panel">
+      <div class="panel-head">
+        <h2>构件树</h2>
+        <span class="count" id="part-count">0</span>
+        <button class="icon-btn close-mobile" data-close="left">×</button>
+      </div>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="搜索构件 / 系统…" autocomplete="off" />
+      </div>
+      <div id="tree" class="tree"></div>
+      <div class="panel-foot">
+        <button id="btn-show-all" class="mini-btn">全部显示</button>
+        <button id="btn-collapse" class="mini-btn">折叠全部</button>
+      </div>
+    </aside>
+
+    <!-- 右侧控制台 -->
+    <aside id="panel-right" class="panel">
+      <div class="panel-head">
+        <h2>系统控制台</h2>
+        <button class="icon-btn close-mobile" data-close="right">×</button>
+      </div>
+      <div class="panel-body" id="controls"></div>
+    </aside>
+
+    <!-- 选中构件信息 -->
+    <div id="info" class="info hidden">
+      <div class="info-head">
+        <span class="dot"></span>
+        <b id="info-title">—</b>
+        <button class="icon-btn" id="info-close">×</button>
+      </div>
+      <div class="info-meta" id="info-meta"></div>
+      <p id="info-details"></p>
+      <div class="info-actions">
+        <button class="mini-btn" id="btn-focus">聚焦</button>
+        <button class="mini-btn" id="btn-isolate">隔离</button>
+        <button class="mini-btn" id="btn-split">单件拆出</button>
+        <button class="mini-btn danger" id="btn-hide">隐藏</button>
+      </div>
+    </div>
+
+    <!-- 底部控制栏 -->
+    <footer id="bottombar">
+      <div class="transport">
+        <button class="tbtn" id="btn-play" title="开始展开">开始</button>
+        <button class="tbtn" id="btn-pause" title="暂停">暂停</button>
+        <button class="tbtn" id="btn-resume" title="继续">继续</button>
+        <button class="tbtn" id="btn-reverse" title="反向播放">反向</button>
+        <button class="tbtn accent" id="btn-reset" title="重新装配">重新装配</button>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <span>分解进度</span>
+          <b id="pct">0%</b>
+          <span class="state" id="play-state">已装配</span>
+        </div>
+        <input type="range" id="progress" min="0" max="1000" value="0" step="1" />
+        <div class="layer-chips" id="layer-chips"></div>
+      </div>
+      <div class="telemetry" id="telemetry">
+        <div><i>转速</i><b id="t-rpm">0.0</b><em>r/min</em></div>
+        <div><i>螺距</i><b id="t-pitch">0</b><em>%</em></div>
+        <div><i>推力</i><b id="t-thrust">0</b><em>%</em></div>
+      </div>
+    </footer>
+
+    <div id="labels" class="labels"></div>
+    <div id="toast" class="toast"></div>
+    <div class="vignette"></div>
+    <div id="tooltip" class="tooltip"></div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# 统一 LF：生成脚本（PARTS.md / AUDIT-ALLOW.md / parts.json）用 LF 写文件，
+# CI 在 windows-latest 上跑 `git diff --exit-code` 做同步校验，若 checkout 成 CRLF
+# 会产生整文件假差异。这里强制文本入库/检出都用 LF，二进制原样保留。
+* text=auto eol=lf
+*.png -text
+*.jpg -text
+*.ico -text

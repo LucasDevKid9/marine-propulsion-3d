@@ -1,0 +1,12 @@
+node_modules/
+.vite/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+shots/audit.json
+shots/*.log
+shots/m*.png
+shots/d-*.png
+scripts/_probe*.mjs
+scripts/_patch.py

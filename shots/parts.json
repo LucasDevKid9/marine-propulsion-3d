@@ -1,0 +1,3482 @@
+[
+ {
+  "id": "env-tanktop",
+  "label": "双层底 tank top / 花钢板走道",
+  "layer": "aux",
+  "sub": "环境",
+  "tags": [
+   "env"
+  ],
+  "details": [],
+  "shell": false,
+  "meshes": 13,
+  "tris": 260
+ },
+ {
+  "id": "env-doublebottom",
+  "label": "双层底结构与肋板",
+  "layer": "aux",
+  "sub": "环境",
+  "tags": [
+   "env"
+  ],
+  "details": [],
+  "shell": false,
+  "meshes": 12,
+  "tris": 1740
+ },
+ {
+  "id": "env-hull-port",
+  "label": "舷侧外板（左舷）",
+  "layer": "aux",
+  "sub": "环境",
+  "tags": [
+   "env"
+  ],
+  "details": [],
+  "shell": false,
+  "meshes": 13,
+  "tris": 228
+ },
+ {
+  "id": "env-hull-stbd",
+  "label": "舷侧外板（右舷剖切边）",
+  "layer": "aux",
+  "sub": "环境",
+  "tags": [
+   "env"
+  ],
+  "details": [],
+  "shell": false,
+  "meshes": 8,
+  "tris": 300
+ },
+ {
+  "id": "env-transom",
+  "label": "艉封板 / 艉轴穿舱",
+  "layer": "aux",
+  "sub": "环境",
+  "tags": [
+   "env"
+  ],
+  "details": [],
+  "shell": false,
+  "meshes": 8,
+  "tris": 1792
+ },
+ {
+  "id": "found-seating",
+  "label": "主机机座支承 / 环氧浇注垫块",
+  "layer": "found",
+  "sub": "支撑",
+  "tags": [],
+  "details": [
+   "铸铁机座支承梁",
+   "环氧树脂浇注垫块",
+   " Holding-down 螺栓",
+   "横向止推键"
+  ],
+  "shell": false,
+  "meshes": 15,
+  "tris": 764
+ },
+ {
+  "id": "found-isolators",
+  "label": "泵组隔振支座",
+  "layer": "found",
+  "sub": "支撑",
+  "tags": [],
+  "details": [
+   "橡胶-钢复合隔振垫",
+   "限位挡块",
+   "调平垫片"
+  ],
+  "shell": false,
+  "meshes": 4,
+  "tris": 612
+ },
+ {
+  "id": "found-gt-platform",
+  "label": "燃气轮机层平台与支柱",
+  "layer": "found",
+  "sub": "支撑",
+  "tags": [],
+  "details": [
+   "格栅平台",
+   "H 型钢支柱",
+   "斜撑",
+   "踢脚板"
+  ],
+  "shell": false,
+  "meshes": 11,
+  "tris": 300
+ },
+ {
+  "id": "found-sterntube",
+  "label": "艉管基座 / 艉柱结构",
+  "layer": "found",
+  "sub": "支撑",
+  "tags": [],
+  "details": [
+   "艉管前支座",
+   "艉管后支座",
+   "艉柱铸钢件",
+   "焊接肘板"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 1008
+ },
+ {
+  "id": "aux-crane",
+  "label": "机舱行车（双梁 + 电动葫芦）",
+  "layer": "aux",
+  "sub": "检修设施",
+  "tags": [],
+  "details": [
+   "双主梁",
+   "端梁",
+   "电动小车",
+   "钢丝绳",
+   "吊钩",
+   "运行轨道"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 568
+ },
+ {
+  "id": "aux-vent-port-fwd",
+  "label": "通风筒 · 左舷前部",
+  "layer": "aux",
+  "sub": "辅助系统",
+  "tags": [],
+  "details": [
+   "圆形风筒",
+   "可调百叶",
+   "防鼠网",
+   "支吊架"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 780
+ },
+ {
+  "id": "aux-vent-stbd-fwd",
+  "label": "通风筒 · 右舷前部",
+  "layer": "aux",
+  "sub": "辅助系统",
+  "tags": [],
+  "details": [
+   "圆形风筒",
+   "可调百叶",
+   "防鼠网",
+   "支吊架"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 780
+ },
+ {
+  "id": "aux-vent-port-aft",
+  "label": "通风筒 · 左舷后部（燃机舱之后）",
+  "layer": "aux",
+  "sub": "辅助系统",
+  "tags": [],
+  "details": [
+   "圆形风筒",
+   "可调百叶",
+   "防鼠网",
+   "支吊架"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 780
+ },
+ {
+  "id": "aux-lighting",
+  "label": "机舱照明灯具 / 应急灯",
+  "layer": "aux",
+  "sub": "辅助系统",
+  "tags": [],
+  "details": [
+   "LED 泛光灯",
+   "防爆灯",
+   "灯架",
+   "应急指示"
+  ],
+  "shell": false,
+  "meshes": 12,
+  "tris": 1900
+ },
+ {
+  "id": "aux-console",
+  "label": "机舱控制台 / 仪表屏",
+  "layer": "aux",
+  "sub": "控制系统",
+  "tags": [],
+  "details": [
+   "主控制箱",
+   "转速表",
+   "螺距指示器",
+   "报警灯板",
+   "操纵手柄",
+   "接线端子"
+  ],
+  "shell": false,
+  "meshes": 9,
+  "tris": 2220
+ },
+ {
+  "id": "aux-pumps",
+  "label": "滑油泵 / 海水泵 / 淡水泵组",
+  "layer": "aux",
+  "sub": "辅助系统",
+  "tags": [],
+  "details": [
+   "离心泵蜗壳",
+   "泵轴",
+   "机械密封",
+   "联轴器",
+   "电机",
+   "底座",
+   "吸入/排出法兰"
+  ],
+  "shell": false,
+  "meshes": 11,
+  "tris": 1812
+ },
+ {
+  "id": "aux-silencer",
+  "label": "排气消音器 / 排气管",
+  "layer": "aux",
+  "sub": "管系",
+  "tags": [],
+  "details": [
+   "消音器筒体",
+   "膨胀节",
+   "支吊架",
+   "排气管",
+   "泄放口"
+  ],
+  "shell": true,
+  "meshes": 4,
+  "tris": 1624
+ },
+ {
+  "id": "aux-gravity-tank",
+  "label": "艉轴管重力油柜",
+  "layer": "aux",
+  "sub": "管系",
+  "tags": [],
+  "details": [
+   "重力油柜",
+   "液位计",
+   "低液位报警",
+   "补油阀",
+   "透气管"
+  ],
+  "shell": true,
+  "meshes": 4,
+  "tris": 1452
+ },
+ {
+  "id": "aux-fire",
+  "label": "机舱固定灭火系统 / 灭火器",
+  "layer": "aux",
+  "sub": "安全",
+  "tags": [],
+  "details": [
+   "CO₂ 瓶组",
+   "瓶头阀",
+   "集流管",
+   "喷放管",
+   "声光报警"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 744
+ },
+ {
+  "id": "aux-pipe-fuel",
+  "label": "燃油供给 / 回油管路",
+  "layer": "aux",
+  "sub": "管系",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "进舱燃油总管",
+   "六缸分支",
+   "回油总管",
+   "法兰",
+   "U 形管夹",
+   "泄放阀"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 12000
+ },
+ {
+  "id": "aux-pipe-lo",
+  "label": "滑油系统管路 / 冷却器 / 滤器",
+  "layer": "aux",
+  "sub": "管系",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "主滑油泵出口",
+   "滑油冷却器",
+   "双联滤器",
+   "三通温控阀",
+   "压力表",
+   "管夹"
+  ],
+  "shell": true,
+  "meshes": 13,
+  "tris": 5140
+ },
+ {
+  "id": "aux-pipe-sw",
+  "label": "海水冷却 / 消防总管",
+  "layer": "aux",
+  "sub": "管系",
+  "tags": [],
+  "details": [
+   "海底门",
+   "海水吸入管",
+   "主海水泵吸入",
+   "消防总管",
+   "消防栓",
+   "滤器"
+  ],
+  "shell": true,
+  "meshes": 16,
+  "tris": 10004
+ },
+ {
+  "id": "aux-pipe-air",
+  "label": "压缩空气启动管路 / 空气瓶",
+  "layer": "aux",
+  "sub": "管系",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "主启动空气瓶 ×3",
+   "减压阀",
+   "启动空气总管",
+   "缸头支管",
+   "安全阀"
+  ],
+  "shell": true,
+  "meshes": 8,
+  "tris": 6948
+ },
+ {
+  "id": "aux-cabletray",
+  "label": "电缆托架 / 接线箱",
+  "layer": "aux",
+  "sub": "控制系统",
+  "tags": [],
+  "details": [
+   "梯式桥架",
+   "立柱支架",
+   "动力/控制分隔",
+   "接线箱",
+   "接地跨接"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 888
+ },
+ {
+  "id": "diesel-bedplate",
+  "label": "铸铁机座（焊接结构床身）",
+  "layer": "engine",
+  "sub": "机座",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "纵向主梁",
+   "横向隔板",
+   "主轴承座",
+   "油底壳",
+   "机脚螺栓",
+   "曲轴箱道门"
+  ],
+  "shell": false,
+  "meshes": 10,
+  "tris": 296
+ },
+ {
+  "id": "diesel-doors",
+  "label": "曲轴箱道门 / 检查盖",
+  "layer": "engine",
+  "sub": "机座",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "铰链式道门",
+   "密封垫",
+   "快速锁紧螺母",
+   "观察窗"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 4080
+ },
+ {
+  "id": "diesel-explosion-doors",
+  "label": "曲轴箱防爆门",
+  "layer": "engine",
+  "sub": "机座",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "防爆膜片",
+   "铰链",
+   "限位弹簧",
+   "泄压方向指示"
+  ],
+  "shell": true,
+  "meshes": 7,
+  "tris": 2088
+ },
+ {
+  "id": "diesel-column",
+  "label": "A 字架 / 机架",
+  "layer": "engine",
+  "sub": "机座",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "A 形机架板",
+   "减重孔",
+   "贯穿螺栓孔",
+   "中间隔板",
+   "曲轴箱通风口"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 6456
+ },
+ {
+  "id": "diesel-tie-rods",
+  "label": "贯穿螺栓 / 液压拉伸螺母",
+  "layer": "engine",
+  "sub": "气缸体",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "长贯穿螺栓",
+   "液压拉伸器螺母",
+   "垫圈",
+   "防腐涂层"
+  ],
+  "shell": false,
+  "meshes": 18,
+  "tris": 2112
+ },
+ {
+  "id": "diesel-cylinder-jacket",
+  "label": "气缸体 / 冷却水套",
+  "layer": "engine",
+  "sub": "气缸体",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸套安装孔",
+   "冷却水腔",
+   "扫气箱接口",
+   "缸盖螺栓",
+   "加强筋"
+  ],
+  "shell": true,
+  "meshes": 24,
+  "tris": 5664
+ },
+ {
+  "id": "diesel-liner",
+  "label": "气缸套 / 扫气口",
+  "layer": "engine",
+  "sub": "气缸体",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "离心铸造缸套",
+   "扫气口（一圈）",
+   "注油点",
+   "冷却水侧",
+   "镜面珩磨"
+  ],
+  "shell": true,
+  "meshes": 20,
+  "tris": 3504
+ },
+ {
+  "id": "diesel-scavenge",
+  "label": "扫气箱 / 扫气集管",
+  "layer": "engine",
+  "sub": "扫气",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "扫气箱",
+   "止回阀片",
+   "扫气支管",
+   "泄放旋塞",
+   "压力传感器"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 976
+ },
+ {
+  "id": "piston-1",
+  "label": "活塞总成 · 第 1 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "活塞头（耐热合金钢）",
+   "活塞环 4 道",
+   "活塞裙",
+   "冷却腔",
+   "活塞杆",
+   "填料函"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 2840
+ },
+ {
+  "id": "crosshead-1",
+  "label": "十字头 · 滑块 · 销",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "十字头本体",
+   "十字头销",
+   "上/下滑块（白合金）",
+   "销端盖",
+   "油孔"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 540
+ },
+ {
+  "id": "guide-1",
+  "label": "十字头导板 · 第 1 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "导板（铸铁）",
+   "调整垫片",
+   "润滑油槽",
+   "紧固螺栓"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 240
+ },
+ {
+  "id": "conrod-1",
+  "label": "剖分式连杆 · 第 1 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "连杆杆身",
+   "大头瓦",
+   "小头瓦",
+   "连杆螺栓",
+   "大头端盖",
+   "甩油孔"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 536
+ },
+ {
+  "id": "exvalve-1",
+  "label": "排气阀 · 阀盘 / 阀杆",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "阀盘（耐热钢）",
+   "阀杆",
+   "阀座锥面",
+   "空气弹簧",
+   "旋阀器",
+   "水冷阀座"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 496
+ },
+ {
+  "id": "airspring-1",
+  "label": "排气阀空气弹簧",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸体",
+   "活塞",
+   "密封圈",
+   "空气管路",
+   "压力表接头"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 416
+ },
+ {
+  "id": "rotator-1",
+  "label": "旋阀器 / 阀杆密封",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "旋阀器本体",
+   "棘轮机构",
+   "回位弹簧",
+   "密封圈"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 496
+ },
+ {
+  "id": "cover-1",
+  "label": "气缸盖 / 阀座水冷腔",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸盖铸件",
+   "阀座水冷腔",
+   "排气通道",
+   "启动阀孔",
+   "示功阀孔",
+   "冷却水接头"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 1536
+ },
+ {
+  "id": "piston-2",
+  "label": "活塞总成 · 第 2 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "活塞头（耐热合金钢）",
+   "活塞环 4 道",
+   "活塞裙",
+   "冷却腔",
+   "活塞杆",
+   "填料函"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 2840
+ },
+ {
+  "id": "crosshead-2",
+  "label": "十字头 · 滑块 · 销",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "十字头本体",
+   "十字头销",
+   "上/下滑块（白合金）",
+   "销端盖",
+   "油孔"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 540
+ },
+ {
+  "id": "guide-2",
+  "label": "十字头导板 · 第 2 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "导板（铸铁）",
+   "调整垫片",
+   "润滑油槽",
+   "紧固螺栓"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 240
+ },
+ {
+  "id": "conrod-2",
+  "label": "剖分式连杆 · 第 2 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "连杆杆身",
+   "大头瓦",
+   "小头瓦",
+   "连杆螺栓",
+   "大头端盖",
+   "甩油孔"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 536
+ },
+ {
+  "id": "exvalve-2",
+  "label": "排气阀 · 阀盘 / 阀杆",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "阀盘（耐热钢）",
+   "阀杆",
+   "阀座锥面",
+   "空气弹簧",
+   "旋阀器",
+   "水冷阀座"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 496
+ },
+ {
+  "id": "airspring-2",
+  "label": "排气阀空气弹簧",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸体",
+   "活塞",
+   "密封圈",
+   "空气管路",
+   "压力表接头"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 416
+ },
+ {
+  "id": "rotator-2",
+  "label": "旋阀器 / 阀杆密封",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "旋阀器本体",
+   "棘轮机构",
+   "回位弹簧",
+   "密封圈"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 496
+ },
+ {
+  "id": "cover-2",
+  "label": "气缸盖 / 阀座水冷腔",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸盖铸件",
+   "阀座水冷腔",
+   "排气通道",
+   "启动阀孔",
+   "示功阀孔",
+   "冷却水接头"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 1536
+ },
+ {
+  "id": "piston-3",
+  "label": "活塞总成 · 第 3 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "活塞头（耐热合金钢）",
+   "活塞环 4 道",
+   "活塞裙",
+   "冷却腔",
+   "活塞杆",
+   "填料函"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 2840
+ },
+ {
+  "id": "crosshead-3",
+  "label": "十字头 · 滑块 · 销",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "十字头本体",
+   "十字头销",
+   "上/下滑块（白合金）",
+   "销端盖",
+   "油孔"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 540
+ },
+ {
+  "id": "guide-3",
+  "label": "十字头导板 · 第 3 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "导板（铸铁）",
+   "调整垫片",
+   "润滑油槽",
+   "紧固螺栓"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 240
+ },
+ {
+  "id": "conrod-3",
+  "label": "剖分式连杆 · 第 3 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "连杆杆身",
+   "大头瓦",
+   "小头瓦",
+   "连杆螺栓",
+   "大头端盖",
+   "甩油孔"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 536
+ },
+ {
+  "id": "exvalve-3",
+  "label": "排气阀 · 阀盘 / 阀杆",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "阀盘（耐热钢）",
+   "阀杆",
+   "阀座锥面",
+   "空气弹簧",
+   "旋阀器",
+   "水冷阀座"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 496
+ },
+ {
+  "id": "airspring-3",
+  "label": "排气阀空气弹簧",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸体",
+   "活塞",
+   "密封圈",
+   "空气管路",
+   "压力表接头"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 416
+ },
+ {
+  "id": "rotator-3",
+  "label": "旋阀器 / 阀杆密封",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "旋阀器本体",
+   "棘轮机构",
+   "回位弹簧",
+   "密封圈"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 496
+ },
+ {
+  "id": "cover-3",
+  "label": "气缸盖 / 阀座水冷腔",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸盖铸件",
+   "阀座水冷腔",
+   "排气通道",
+   "启动阀孔",
+   "示功阀孔",
+   "冷却水接头"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 1536
+ },
+ {
+  "id": "piston-4",
+  "label": "活塞总成 · 第 4 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "活塞头（耐热合金钢）",
+   "活塞环 4 道",
+   "活塞裙",
+   "冷却腔",
+   "活塞杆",
+   "填料函"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 2840
+ },
+ {
+  "id": "crosshead-4",
+  "label": "十字头 · 滑块 · 销",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "十字头本体",
+   "十字头销",
+   "上/下滑块（白合金）",
+   "销端盖",
+   "油孔"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 540
+ },
+ {
+  "id": "guide-4",
+  "label": "十字头导板 · 第 4 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "导板（铸铁）",
+   "调整垫片",
+   "润滑油槽",
+   "紧固螺栓"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 240
+ },
+ {
+  "id": "conrod-4",
+  "label": "剖分式连杆 · 第 4 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "连杆杆身",
+   "大头瓦",
+   "小头瓦",
+   "连杆螺栓",
+   "大头端盖",
+   "甩油孔"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 536
+ },
+ {
+  "id": "exvalve-4",
+  "label": "排气阀 · 阀盘 / 阀杆",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "阀盘（耐热钢）",
+   "阀杆",
+   "阀座锥面",
+   "空气弹簧",
+   "旋阀器",
+   "水冷阀座"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 496
+ },
+ {
+  "id": "airspring-4",
+  "label": "排气阀空气弹簧",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸体",
+   "活塞",
+   "密封圈",
+   "空气管路",
+   "压力表接头"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 416
+ },
+ {
+  "id": "rotator-4",
+  "label": "旋阀器 / 阀杆密封",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "旋阀器本体",
+   "棘轮机构",
+   "回位弹簧",
+   "密封圈"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 496
+ },
+ {
+  "id": "cover-4",
+  "label": "气缸盖 / 阀座水冷腔",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸盖铸件",
+   "阀座水冷腔",
+   "排气通道",
+   "启动阀孔",
+   "示功阀孔",
+   "冷却水接头"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 1536
+ },
+ {
+  "id": "piston-5",
+  "label": "活塞总成 · 第 5 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "活塞头（耐热合金钢）",
+   "活塞环 4 道",
+   "活塞裙",
+   "冷却腔",
+   "活塞杆",
+   "填料函"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 2840
+ },
+ {
+  "id": "crosshead-5",
+  "label": "十字头 · 滑块 · 销",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "十字头本体",
+   "十字头销",
+   "上/下滑块（白合金）",
+   "销端盖",
+   "油孔"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 540
+ },
+ {
+  "id": "guide-5",
+  "label": "十字头导板 · 第 5 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "导板（铸铁）",
+   "调整垫片",
+   "润滑油槽",
+   "紧固螺栓"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 240
+ },
+ {
+  "id": "conrod-5",
+  "label": "剖分式连杆 · 第 5 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "连杆杆身",
+   "大头瓦",
+   "小头瓦",
+   "连杆螺栓",
+   "大头端盖",
+   "甩油孔"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 536
+ },
+ {
+  "id": "exvalve-5",
+  "label": "排气阀 · 阀盘 / 阀杆",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "阀盘（耐热钢）",
+   "阀杆",
+   "阀座锥面",
+   "空气弹簧",
+   "旋阀器",
+   "水冷阀座"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 496
+ },
+ {
+  "id": "airspring-5",
+  "label": "排气阀空气弹簧",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸体",
+   "活塞",
+   "密封圈",
+   "空气管路",
+   "压力表接头"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 416
+ },
+ {
+  "id": "rotator-5",
+  "label": "旋阀器 / 阀杆密封",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "旋阀器本体",
+   "棘轮机构",
+   "回位弹簧",
+   "密封圈"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 496
+ },
+ {
+  "id": "cover-5",
+  "label": "气缸盖 / 阀座水冷腔",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸盖铸件",
+   "阀座水冷腔",
+   "排气通道",
+   "启动阀孔",
+   "示功阀孔",
+   "冷却水接头"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 1536
+ },
+ {
+  "id": "piston-6",
+  "label": "活塞总成 · 第 6 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "活塞头（耐热合金钢）",
+   "活塞环 4 道",
+   "活塞裙",
+   "冷却腔",
+   "活塞杆",
+   "填料函"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 2840
+ },
+ {
+  "id": "crosshead-6",
+  "label": "十字头 · 滑块 · 销",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "十字头本体",
+   "十字头销",
+   "上/下滑块（白合金）",
+   "销端盖",
+   "油孔"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 540
+ },
+ {
+  "id": "guide-6",
+  "label": "十字头导板 · 第 6 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "导板（铸铁）",
+   "调整垫片",
+   "润滑油槽",
+   "紧固螺栓"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 240
+ },
+ {
+  "id": "conrod-6",
+  "label": "剖分式连杆 · 第 6 缸",
+  "layer": "engine",
+  "sub": "运动件",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "连杆杆身",
+   "大头瓦",
+   "小头瓦",
+   "连杆螺栓",
+   "大头端盖",
+   "甩油孔"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 536
+ },
+ {
+  "id": "exvalve-6",
+  "label": "排气阀 · 阀盘 / 阀杆",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "阀盘（耐热钢）",
+   "阀杆",
+   "阀座锥面",
+   "空气弹簧",
+   "旋阀器",
+   "水冷阀座"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 496
+ },
+ {
+  "id": "airspring-6",
+  "label": "排气阀空气弹簧",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸体",
+   "活塞",
+   "密封圈",
+   "空气管路",
+   "压力表接头"
+  ],
+  "shell": true,
+  "meshes": 3,
+  "tris": 416
+ },
+ {
+  "id": "rotator-6",
+  "label": "旋阀器 / 阀杆密封",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "旋阀器本体",
+   "棘轮机构",
+   "回位弹簧",
+   "密封圈"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 496
+ },
+ {
+  "id": "cover-6",
+  "label": "气缸盖 / 阀座水冷腔",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "气缸盖铸件",
+   "阀座水冷腔",
+   "排气通道",
+   "启动阀孔",
+   "示功阀孔",
+   "冷却水接头"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 1536
+ },
+ {
+  "id": "diesel-crankshaft",
+  "label": "锻钢曲轴 / 主轴颈 · 曲柄销 · 平衡重",
+  "layer": "engine",
+  "sub": "曲轴",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "主轴颈（7 道）",
+   "曲柄销（6 个）",
+   "曲柄臂",
+   "平衡重",
+   "油孔",
+   "轴端法兰"
+  ],
+  "shell": false,
+  "meshes": 36,
+  "tris": 4624
+ },
+ {
+  "id": "diesel-main-bearings",
+  "label": "主轴承盖 / 轴瓦",
+  "layer": "engine",
+  "sub": "曲轴",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "主轴承盖",
+   "白合金轴瓦",
+   "液压螺母",
+   "定位销",
+   "间隙测量点"
+  ],
+  "shell": true,
+  "meshes": 12,
+  "tris": 2072
+ },
+ {
+  "id": "diesel-flywheel",
+  "label": "飞轮 / 盘车齿圈",
+  "layer": "engine",
+  "sub": "曲轴",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "飞轮本体",
+   "盘车齿圈",
+   "飞轮螺栓",
+   "平衡孔",
+   "转速信号齿"
+  ],
+  "shell": false,
+  "meshes": 10,
+  "tris": 3120
+ },
+ {
+  "id": "diesel-turning-gear",
+  "label": "盘车机构 / 电动盘车机",
+  "layer": "engine",
+  "sub": "曲轴",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "盘车电机",
+   "减速齿轮",
+   "盘车小齿轮",
+   "离合手柄",
+   "限位开关"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 836
+ },
+ {
+  "id": "diesel-camshaft",
+  "label": "凸轮轴 / 排气凸轮 · 燃油凸轮",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "凸轮轴",
+   "排气凸轮（6）",
+   "燃油凸轮（6）",
+   "传动齿轮",
+   "轴承座",
+   "链轮"
+  ],
+  "shell": false,
+  "meshes": 22,
+  "tris": 2320
+ },
+ {
+  "id": "diesel-cam-drive",
+  "label": "凸轮轴传动齿轮系",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "曲轴齿轮",
+   "中间齿轮",
+   "凸轮轴齿轮",
+   "齿轮箱罩",
+   "润滑油喷嘴"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 1380
+ },
+ {
+  "id": "rocker-1",
+  "label": "排气阀摇臂 / 顶杆 / 滚轮",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "摇臂",
+   "顶杆",
+   "滚轮",
+   "调整螺钉",
+   "摇臂轴"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 372
+ },
+ {
+  "id": "rocker-2",
+  "label": "排气阀摇臂 / 顶杆 / 滚轮",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "摇臂",
+   "顶杆",
+   "滚轮",
+   "调整螺钉",
+   "摇臂轴"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 372
+ },
+ {
+  "id": "rocker-3",
+  "label": "排气阀摇臂 / 顶杆 / 滚轮",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "摇臂",
+   "顶杆",
+   "滚轮",
+   "调整螺钉",
+   "摇臂轴"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 372
+ },
+ {
+  "id": "rocker-4",
+  "label": "排气阀摇臂 / 顶杆 / 滚轮",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "摇臂",
+   "顶杆",
+   "滚轮",
+   "调整螺钉",
+   "摇臂轴"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 372
+ },
+ {
+  "id": "rocker-5",
+  "label": "排气阀摇臂 / 顶杆 / 滚轮",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "摇臂",
+   "顶杆",
+   "滚轮",
+   "调整螺钉",
+   "摇臂轴"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 372
+ },
+ {
+  "id": "rocker-6",
+  "label": "排气阀摇臂 / 顶杆 / 滚轮",
+  "layer": "engine",
+  "sub": "配气机构",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "摇臂",
+   "顶杆",
+   "滚轮",
+   "调整螺钉",
+   "摇臂轴"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 372
+ },
+ {
+  "id": "fuelpump-1",
+  "label": "燃油喷射泵 · 柱塞偶件 · 齿条",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "泵体",
+   "柱塞偶件",
+   "出油阀",
+   "齿条（供油量调节）",
+   "滚轮挺柱",
+   "泄油管"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 608
+ },
+ {
+  "id": "injector-1",
+  "label": "喷油器 · 针阀偶件 · 冷却腔",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "喷油器体",
+   "针阀偶件",
+   "冷却腔",
+   "高压油管接头",
+   "回油管",
+   "雾化喷孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 448
+ },
+ {
+  "id": "combustion-1",
+  "label": "缸内燃烧 / 喷雾可视化",
+  "layer": "engine",
+  "sub": "工作循环",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "燃烧火焰核心",
+   "燃油喷雾锥",
+   "缸内压力波",
+   "火焰传播"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 534
+ },
+ {
+  "id": "hp-pipe-1",
+  "label": "高压油管 · 第 1 缸",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "双层高压油管",
+   "法兰接头",
+   "管夹",
+   "泄漏报警"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 652
+ },
+ {
+  "id": "fuelpump-2",
+  "label": "燃油喷射泵 · 柱塞偶件 · 齿条",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "泵体",
+   "柱塞偶件",
+   "出油阀",
+   "齿条（供油量调节）",
+   "滚轮挺柱",
+   "泄油管"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 608
+ },
+ {
+  "id": "injector-2",
+  "label": "喷油器 · 针阀偶件 · 冷却腔",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "喷油器体",
+   "针阀偶件",
+   "冷却腔",
+   "高压油管接头",
+   "回油管",
+   "雾化喷孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 448
+ },
+ {
+  "id": "combustion-2",
+  "label": "缸内燃烧 / 喷雾可视化",
+  "layer": "engine",
+  "sub": "工作循环",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "燃烧火焰核心",
+   "燃油喷雾锥",
+   "缸内压力波",
+   "火焰传播"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 534
+ },
+ {
+  "id": "hp-pipe-2",
+  "label": "高压油管 · 第 2 缸",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "双层高压油管",
+   "法兰接头",
+   "管夹",
+   "泄漏报警"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 652
+ },
+ {
+  "id": "fuelpump-3",
+  "label": "燃油喷射泵 · 柱塞偶件 · 齿条",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "泵体",
+   "柱塞偶件",
+   "出油阀",
+   "齿条（供油量调节）",
+   "滚轮挺柱",
+   "泄油管"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 608
+ },
+ {
+  "id": "injector-3",
+  "label": "喷油器 · 针阀偶件 · 冷却腔",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "喷油器体",
+   "针阀偶件",
+   "冷却腔",
+   "高压油管接头",
+   "回油管",
+   "雾化喷孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 448
+ },
+ {
+  "id": "combustion-3",
+  "label": "缸内燃烧 / 喷雾可视化",
+  "layer": "engine",
+  "sub": "工作循环",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "燃烧火焰核心",
+   "燃油喷雾锥",
+   "缸内压力波",
+   "火焰传播"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 534
+ },
+ {
+  "id": "hp-pipe-3",
+  "label": "高压油管 · 第 3 缸",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "双层高压油管",
+   "法兰接头",
+   "管夹",
+   "泄漏报警"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 652
+ },
+ {
+  "id": "fuelpump-4",
+  "label": "燃油喷射泵 · 柱塞偶件 · 齿条",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "泵体",
+   "柱塞偶件",
+   "出油阀",
+   "齿条（供油量调节）",
+   "滚轮挺柱",
+   "泄油管"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 608
+ },
+ {
+  "id": "injector-4",
+  "label": "喷油器 · 针阀偶件 · 冷却腔",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "喷油器体",
+   "针阀偶件",
+   "冷却腔",
+   "高压油管接头",
+   "回油管",
+   "雾化喷孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 448
+ },
+ {
+  "id": "combustion-4",
+  "label": "缸内燃烧 / 喷雾可视化",
+  "layer": "engine",
+  "sub": "工作循环",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "燃烧火焰核心",
+   "燃油喷雾锥",
+   "缸内压力波",
+   "火焰传播"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 534
+ },
+ {
+  "id": "hp-pipe-4",
+  "label": "高压油管 · 第 4 缸",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "双层高压油管",
+   "法兰接头",
+   "管夹",
+   "泄漏报警"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 652
+ },
+ {
+  "id": "fuelpump-5",
+  "label": "燃油喷射泵 · 柱塞偶件 · 齿条",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "泵体",
+   "柱塞偶件",
+   "出油阀",
+   "齿条（供油量调节）",
+   "滚轮挺柱",
+   "泄油管"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 608
+ },
+ {
+  "id": "injector-5",
+  "label": "喷油器 · 针阀偶件 · 冷却腔",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "喷油器体",
+   "针阀偶件",
+   "冷却腔",
+   "高压油管接头",
+   "回油管",
+   "雾化喷孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 448
+ },
+ {
+  "id": "combustion-5",
+  "label": "缸内燃烧 / 喷雾可视化",
+  "layer": "engine",
+  "sub": "工作循环",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "燃烧火焰核心",
+   "燃油喷雾锥",
+   "缸内压力波",
+   "火焰传播"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 534
+ },
+ {
+  "id": "hp-pipe-5",
+  "label": "高压油管 · 第 5 缸",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "双层高压油管",
+   "法兰接头",
+   "管夹",
+   "泄漏报警"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 652
+ },
+ {
+  "id": "fuelpump-6",
+  "label": "燃油喷射泵 · 柱塞偶件 · 齿条",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "泵体",
+   "柱塞偶件",
+   "出油阀",
+   "齿条（供油量调节）",
+   "滚轮挺柱",
+   "泄油管"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 608
+ },
+ {
+  "id": "injector-6",
+  "label": "喷油器 · 针阀偶件 · 冷却腔",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "喷油器体",
+   "针阀偶件",
+   "冷却腔",
+   "高压油管接头",
+   "回油管",
+   "雾化喷孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 448
+ },
+ {
+  "id": "combustion-6",
+  "label": "缸内燃烧 / 喷雾可视化",
+  "layer": "engine",
+  "sub": "工作循环",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "燃烧火焰核心",
+   "燃油喷雾锥",
+   "缸内压力波",
+   "火焰传播"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 534
+ },
+ {
+  "id": "hp-pipe-6",
+  "label": "高压油管 · 第 6 缸",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "双层高压油管",
+   "法兰接头",
+   "管夹",
+   "泄漏报警"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 652
+ },
+ {
+  "id": "diesel-exhaust-manifold",
+  "label": "排气集管 / 波纹补偿器",
+  "layer": "engine",
+  "sub": "排气",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "排气集管",
+   "波纹补偿器",
+   "隔热层",
+   "支座",
+   "温度传感器"
+  ],
+  "shell": true,
+  "meshes": 4,
+  "tris": 6848
+ },
+ {
+  "id": "turbo-casing",
+  "label": "废气涡轮增压器 · 涡壳 / 压气机壳",
+  "layer": "engine",
+  "sub": "增压",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "涡轮涡壳",
+   "压气机蜗壳",
+   "轴承壳体",
+   "隔热罩",
+   "进口消音器",
+   "出口扩压器"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 1628
+ },
+ {
+  "id": "turbo-rotor",
+  "label": "增压器转子 · 涡轮叶轮 / 压气机叶轮",
+  "layer": "engine",
+  "sub": "增压",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "涡轮叶轮",
+   "压气机叶轮",
+   "转子轴",
+   "浮动轴承",
+   "密封环",
+   "锁紧螺母"
+  ],
+  "shell": false,
+  "meshes": 14,
+  "tris": 3280
+ },
+ {
+  "id": "turbo-aircooler",
+  "label": "空冷器 / 辅助鼓风机",
+  "layer": "engine",
+  "sub": "增压",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "空冷器壳体",
+   "冷却水管束",
+   "翅片",
+   "凝水泄放",
+   "辅助鼓风机",
+   "进出口法兰"
+  ],
+  "shell": true,
+  "meshes": 4,
+  "tris": 844
+ },
+ {
+  "id": "diesel-governor",
+  "label": "调速器 / 燃油齿条执行机构",
+  "layer": "engine",
+  "sub": "燃油系统",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "液压调速器",
+   "伺服马达",
+   "反馈连杆",
+   "停车电磁阀",
+   "转速设定"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 520
+ },
+ {
+  "id": "diesel-breather",
+  "label": "曲轴箱呼吸器 / 滑油滤器",
+  "layer": "engine",
+  "sub": "辅助",
+  "tags": [
+   "diesel-only"
+  ],
+  "details": [
+   "呼吸器筒体",
+   "油气分离滤芯",
+   "滑油滤器",
+   "差压报警"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 1040
+ },
+ {
+  "id": "cpp-hub",
+  "label": "可调距桨桨毂 / 叶片法兰座",
+  "layer": "prop",
+  "sub": "CPP 桨毂",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "桨毂铸钢件",
+   "叶片法兰座（4 处）",
+   "伺服缸筒",
+   "密封端盖",
+   "阳极块"
+  ],
+  "shell": true,
+  "meshes": 12,
+  "tris": 3632
+ },
+ {
+  "id": "cpp-blade-1",
+  "label": "可调距桨桨叶 1 / 叶根法兰",
+  "layer": "prop",
+  "sub": "CPP 桨叶",
+  "tags": [
+   "cpp-only",
+   "cpp-blade"
+  ],
+  "details": [
+   "大侧斜铜合金桨叶（Ni-Al-Bronze）",
+   "叶根法兰",
+   "法兰螺栓 12×",
+   "根部密封环",
+   "导边/随边",
+   "螺距角基准线"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 2304
+ },
+ {
+  "id": "cpp-blade-2",
+  "label": "可调距桨桨叶 2 / 叶根法兰",
+  "layer": "prop",
+  "sub": "CPP 桨叶",
+  "tags": [
+   "cpp-only",
+   "cpp-blade"
+  ],
+  "details": [
+   "大侧斜铜合金桨叶（Ni-Al-Bronze）",
+   "叶根法兰",
+   "法兰螺栓 12×",
+   "根部密封环",
+   "导边/随边",
+   "螺距角基准线"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 2304
+ },
+ {
+  "id": "cpp-blade-3",
+  "label": "可调距桨桨叶 3 / 叶根法兰",
+  "layer": "prop",
+  "sub": "CPP 桨叶",
+  "tags": [
+   "cpp-only",
+   "cpp-blade"
+  ],
+  "details": [
+   "大侧斜铜合金桨叶（Ni-Al-Bronze）",
+   "叶根法兰",
+   "法兰螺栓 12×",
+   "根部密封环",
+   "导边/随边",
+   "螺距角基准线"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 2304
+ },
+ {
+  "id": "cpp-blade-4",
+  "label": "可调距桨桨叶 4 / 叶根法兰",
+  "layer": "prop",
+  "sub": "CPP 桨叶",
+  "tags": [
+   "cpp-only",
+   "cpp-blade"
+  ],
+  "details": [
+   "大侧斜铜合金桨叶（Ni-Al-Bronze）",
+   "叶根法兰",
+   "法兰螺栓 12×",
+   "根部密封环",
+   "导边/随边",
+   "螺距角基准线"
+  ],
+  "shell": false,
+  "meshes": 7,
+  "tris": 2304
+ },
+ {
+  "id": "cpp-servo-piston",
+  "label": "桨毂伺服活塞 / 活塞杆",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "伺服活塞",
+   "活塞杆",
+   "活塞环",
+   "正车油腔侧",
+   "倒车油腔侧"
+  ],
+  "shell": false,
+  "meshes": 4,
+  "tris": 1256
+ },
+ {
+  "id": "cpp-crank-ring",
+  "label": "曲柄销环 / 偏心销",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "曲柄销环",
+   "偏心销（4 处）",
+   "滑块销",
+   "止推面",
+   "润滑油孔"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 1104
+ },
+ {
+  "id": "cpp-slider",
+  "label": "滑块 / 滑块凹槽",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "滑块",
+   "滑块凹槽",
+   "销轴",
+   "耐磨衬板",
+   "润滑槽"
+  ],
+  "shell": false,
+  "meshes": 8,
+  "tris": 240
+ },
+ {
+  "id": "cpp-link-disc",
+  "label": "联动盘 / 桨叶转臂",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "联动盘",
+   "桨叶转臂（4 处）",
+   "连杆销",
+   "止推垫圈",
+   "锁紧螺母"
+  ],
+  "shell": false,
+  "meshes": 10,
+  "tris": 392
+ },
+ {
+  "id": "cpp-oil-ahead",
+  "label": "正车油腔（Ahead）",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "正车工作油腔",
+   "进油道",
+   "密封环",
+   "压力传感器"
+  ],
+  "shell": false,
+  "meshes": 1,
+  "tris": 864
+ },
+ {
+  "id": "cpp-oil-astern",
+  "label": "倒车油腔（Astern）",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "倒车工作油腔",
+   "回油道",
+   "密封环",
+   "压力传感器"
+  ],
+  "shell": false,
+  "meshes": 1,
+  "tris": 864
+ },
+ {
+  "id": "cpp-oil-pipes",
+  "label": "双层输油管 / 油分配器",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "内层高压油管",
+   "外层回油管",
+   "油分配器",
+   "旋转接头",
+   "密封圈"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 584
+ },
+ {
+  "id": "cpp-pitch-sensor",
+  "label": "螺距反馈传感器 / 桨毂密封",
+  "layer": "prop",
+  "sub": "CPP 液压",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "螺距反馈环",
+   "位移传感器",
+   "桨毂端面密封",
+   "O 形圈",
+   "接线盒"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 952
+ },
+ {
+  "id": "cpp-nose-cone",
+  "label": "桨毂整流罩 / 导流帽",
+  "layer": "prop",
+  "sub": "CPP 桨毂",
+  "tags": [
+   "cpp-only"
+  ],
+  "details": [
+   "玻璃钢导流帽",
+   "紧固螺栓",
+   "密封圈",
+   "排水孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 1312
+ },
+ {
+  "id": "fpp-blade-1",
+  "label": "定距桨桨叶 1 / 锥孔键槽",
+  "layer": "prop",
+  "sub": "FPP 桨叶",
+  "tags": [
+   "fpp-only"
+  ],
+  "details": [
+   "定距桨叶（镍铝青铜）",
+   "锥孔",
+   "键槽",
+   "压盖螺母",
+   "叶根圆角"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 1584
+ },
+ {
+  "id": "fpp-blade-2",
+  "label": "定距桨桨叶 2 / 锥孔键槽",
+  "layer": "prop",
+  "sub": "FPP 桨叶",
+  "tags": [
+   "fpp-only"
+  ],
+  "details": [
+   "定距桨叶（镍铝青铜）",
+   "锥孔",
+   "键槽",
+   "压盖螺母",
+   "叶根圆角"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 1584
+ },
+ {
+  "id": "fpp-blade-3",
+  "label": "定距桨桨叶 3 / 锥孔键槽",
+  "layer": "prop",
+  "sub": "FPP 桨叶",
+  "tags": [
+   "fpp-only"
+  ],
+  "details": [
+   "定距桨叶（镍铝青铜）",
+   "锥孔",
+   "键槽",
+   "压盖螺母",
+   "叶根圆角"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 1584
+ },
+ {
+  "id": "fpp-blade-4",
+  "label": "定距桨桨叶 4 / 锥孔键槽",
+  "layer": "prop",
+  "sub": "FPP 桨叶",
+  "tags": [
+   "fpp-only"
+  ],
+  "details": [
+   "定距桨叶（镍铝青铜）",
+   "锥孔",
+   "键槽",
+   "压盖螺母",
+   "叶根圆角"
+  ],
+  "shell": false,
+  "meshes": 3,
+  "tris": 1584
+ },
+ {
+  "id": "fpp-duct",
+  "label": "导管（Kort Nozzle）/ 导管支撑",
+  "layer": "prop",
+  "sub": "导管",
+  "tags": [
+   "fpp-only"
+  ],
+  "details": [
+   "导管内壳",
+   "导管外壳",
+   "导叶（定子）",
+   "支撑臂",
+   "防腐涂层",
+   "排水孔"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 1200
+ },
+ {
+  "id": "shaft-flex-coupling",
+  "label": "高弹性联轴器 / 法兰螺栓",
+  "layer": "shaft",
+  "sub": "联轴器",
+  "tags": [],
+  "details": [
+   "主动法兰",
+   "从动法兰",
+   "橡胶块组",
+   "高强度螺栓",
+   "定心环",
+   "轴向限位"
+  ],
+  "shell": false,
+  "meshes": 11,
+  "tris": 3680
+ },
+ {
+  "id": "shaft-intermediate",
+  "label": "中间轴 / 联轴器法兰",
+  "layer": "shaft",
+  "sub": "轴段",
+  "tags": [],
+  "details": [
+   "锻钢中间轴",
+   "两端联轴器法兰",
+   "键",
+   "防腐涂层",
+   "轴系接地滑环"
+  ],
+  "shell": false,
+  "meshes": 12,
+  "tris": 992
+ },
+ {
+  "id": "shaft-grounding",
+  "label": "轴系接地装置 / 碳刷",
+  "layer": "shaft",
+  "sub": "附件",
+  "tags": [],
+  "details": [
+   "接地滑环",
+   "碳刷",
+   "刷架",
+   "弹簧压紧",
+   "接地电缆"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 812
+ },
+ {
+  "id": "shaft-brake-disc",
+  "label": "轴系制动盘",
+  "layer": "shaft",
+  "sub": "制动",
+  "tags": [],
+  "details": [
+   "制动盘",
+   "盘毂",
+   "通风槽",
+   "磨损指示"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 400
+ },
+ {
+  "id": "shaft-brake-caliper",
+  "label": "制动钳 / 液压缸",
+  "layer": "shaft",
+  "sub": "制动",
+  "tags": [],
+  "details": [
+   "制动钳体",
+   "摩擦片",
+   "液压缸",
+   "弹簧释放",
+   "限位开关"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 612
+ },
+ {
+  "id": "thrust-collar",
+  "label": "推力环 / 推力轴",
+  "layer": "shaft",
+  "sub": "推力轴承",
+  "tags": [],
+  "details": [
+   "推力环（锻钢）",
+   "推力轴",
+   "工作面研磨",
+   "油孔",
+   "温度测点"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 592
+ },
+ {
+  "id": "thrust-pads",
+  "label": "推力块组 / 轴承壳体",
+  "layer": "shaft",
+  "sub": "推力轴承",
+  "tags": [],
+  "details": [
+   "推力块（8 块）",
+   "白合金工作面",
+   "球面支承",
+   "轴承壳体",
+   "进油环",
+   "回油管"
+  ],
+  "shell": true,
+  "meshes": 10,
+  "tris": 1344
+ },
+ {
+  "id": "thrust-oil-film",
+  "label": "推力油膜（压力可视化）",
+  "layer": "shaft",
+  "sub": "推力轴承",
+  "tags": [],
+  "details": [
+   "油膜间隙 0.05–0.12 mm",
+   "动压油楔",
+   "油膜压力分布",
+   "油温测点"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 1120
+ },
+ {
+  "id": "shaft-intermediate-bearing",
+  "label": "中间轴承 / 轴瓦 / 油环",
+  "layer": "shaft",
+  "sub": "中间轴承",
+  "tags": [],
+  "details": [
+   "轴承壳体",
+   "上/下轴瓦（白合金）",
+   "油环",
+   "油位视镜",
+   "冷却水腔",
+   "温度传感器"
+  ],
+  "shell": true,
+  "meshes": 7,
+  "tris": 2016
+ },
+ {
+  "id": "shaft-oil-ring",
+  "label": "中间轴承油环",
+  "layer": "shaft",
+  "sub": "中间轴承",
+  "tags": [],
+  "details": [
+   "油环",
+   "油环槽",
+   "携油孔"
+  ],
+  "shell": false,
+  "meshes": 1,
+  "tris": 896
+ },
+ {
+  "id": "stern-shaft",
+  "label": "艉轴 / 螺旋桨轴",
+  "layer": "stern",
+  "sub": "艉轴",
+  "tags": [],
+  "details": [
+   "锻钢艉轴",
+   "锥形前端",
+   "键槽",
+   "包覆防腐层",
+   "轴端螺纹"
+  ],
+  "shell": false,
+  "meshes": 4,
+  "tris": 1020
+ },
+ {
+  "id": "stern-tube",
+  "label": "艉管本体 / 前后法兰",
+  "layer": "stern",
+  "sub": "艉管",
+  "tags": [],
+  "details": [
+   "艉管筒体",
+   "前/后法兰",
+   "冷却水腔",
+   "防腐涂层",
+   "人孔盖"
+  ],
+  "shell": true,
+  "meshes": 16,
+  "tris": 1352
+ },
+ {
+  "id": "stern-bearings",
+  "label": "艉管前 / 后白合金轴承",
+  "layer": "stern",
+  "sub": "轴承",
+  "tags": [],
+  "details": [
+   "前白合金轴承",
+   "后白合金轴承",
+   "螺旋油槽",
+   "轴承衬套",
+   "止推凸缘"
+  ],
+  "shell": false,
+  "meshes": 12,
+  "tris": 1200
+ },
+ {
+  "id": "stern-seal-1",
+  "label": "艉管唇形密封 · 第 1 道（FKM）",
+  "layer": "stern",
+  "sub": "密封",
+  "tags": [],
+  "details": [
+   "氟橡胶唇形密封圈",
+   "环形弹簧（garter spring）",
+   "骨架",
+   "唇口",
+   "防尘副唇",
+   "注脂通道"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 1248
+ },
+ {
+  "id": "stern-seal-2",
+  "label": "艉管唇形密封 · 第 2 道（FKM）",
+  "layer": "stern",
+  "sub": "密封",
+  "tags": [],
+  "details": [
+   "氟橡胶唇形密封圈",
+   "环形弹簧（garter spring）",
+   "骨架",
+   "唇口",
+   "防尘副唇",
+   "注脂通道"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 1248
+ },
+ {
+  "id": "stern-seal-3",
+  "label": "艉管唇形密封 · 第 3 道（FKM）",
+  "layer": "stern",
+  "sub": "密封",
+  "tags": [],
+  "details": [
+   "氟橡胶唇形密封圈",
+   "环形弹簧（garter spring）",
+   "骨架",
+   "唇口",
+   "防尘副唇",
+   "注脂通道"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 1248
+ },
+ {
+  "id": "stern-gland",
+  "label": "密封压盖 / 防松螺栓",
+  "layer": "stern",
+  "sub": "密封",
+  "tags": [],
+  "details": [
+   "压盖本体",
+   "压盖防松螺栓",
+   "调整垫片",
+   "注脂嘴",
+   "泄放口"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 720
+ },
+ {
+  "id": "stern-balance-ring",
+  "label": "压力平衡环 / 滑油腔",
+  "layer": "stern",
+  "sub": "密封",
+  "tags": [],
+  "details": [
+   "压力平衡环",
+   "环形油腔",
+   "滑油进油口",
+   "压力表接头",
+   "回油口"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 1000
+ },
+ {
+  "id": "stern-seawater-chamber",
+  "label": "海水平衡腔 / 冷却水腔",
+  "layer": "stern",
+  "sub": "密封",
+  "tags": [],
+  "details": [
+   "海水平衡腔",
+   "海水进/出口",
+   "滤网",
+   "防海生物电极",
+   "压力传感器"
+  ],
+  "shell": false,
+  "meshes": 2,
+  "tris": 680
+ },
+ {
+  "id": "stern-lube-line",
+  "label": "艉管滑油管路 / 注脂管",
+  "layer": "stern",
+  "sub": "密封",
+  "tags": [],
+  "details": [
+   "滑油供油管",
+   "注脂管",
+   "压力表",
+   "截止阀",
+   "管夹"
+  ],
+  "shell": false,
+  "meshes": 4,
+  "tris": 1464
+ },
+ {
+  "id": "gt-intake-filter",
+  "label": "进气滤清器 / 防冰格栅",
+  "layer": "engine",
+  "sub": "GT 进气",
+  "tags": [
+   "gt",
+   "gt-shell",
+   "gt-comp"
+  ],
+  "details": [
+   "三级滤清器",
+   "防雨百叶",
+   "防冰格栅",
+   "压差变送器",
+   "滤芯框架"
+  ],
+  "shell": true,
+  "meshes": 5,
+  "tris": 652
+ },
+ {
+  "id": "gt-lp-casing",
+  "label": "低压压气机机匣 / 静叶",
+  "layer": "engine",
+  "sub": "GT 压气机",
+  "tags": [
+   "gt",
+   "gt-shell",
+   "gt-comp"
+  ],
+  "details": [
+   "低压机匣",
+   "4 级静叶",
+   "可调进口导叶（IGV）",
+   "级间放气口",
+   "篦齿封严",
+   "进气温度测点"
+  ],
+  "shell": true,
+  "meshes": 15,
+  "tris": 4592
+ },
+ {
+  "id": "gt-igv",
+  "label": "可调进口导叶（IGV）",
+  "layer": "engine",
+  "sub": "GT 压气机",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "可调导叶 16 片",
+   "联动环",
+   "执行机构",
+   "角度反馈",
+   "轴承衬套"
+  ],
+  "shell": false,
+  "meshes": 17,
+  "tris": 960
+ },
+ {
+  "id": "gt-hp-casing",
+  "label": "高压压气机机匣 / 静叶",
+  "layer": "engine",
+  "sub": "GT 压气机",
+  "tags": [
+   "gt",
+   "gt-shell",
+   "gt-comp"
+  ],
+  "details": [
+   "高压机匣",
+   "3 级静叶",
+   "级间封严",
+   "放气活门",
+   "冷却空气引出口"
+  ],
+  "shell": true,
+  "meshes": 13,
+  "tris": 1848
+ },
+ {
+  "id": "gt-comb-casing",
+  "label": "环形燃烧室机匣 / 扩压器",
+  "layer": "engine",
+  "sub": "GT 燃烧室",
+  "tags": [
+   "gt",
+   "gt-shell",
+   "gt-comb"
+  ],
+  "details": [
+   "环形燃烧室机匣",
+   "扩压器",
+   "火焰筒安装座",
+   "燃油总管",
+   "点火器座",
+   "观察孔"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 1632
+ },
+ {
+  "id": "gt-flametubes",
+  "label": "火焰筒 ×6 / 气膜冷却孔",
+  "layer": "engine",
+  "sub": "GT 燃烧室",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "火焰筒",
+   "旋流器",
+   "掺混孔",
+   "气膜冷却孔",
+   "联焰管",
+   "出口过渡段"
+  ],
+  "shell": false,
+  "meshes": 72,
+  "tris": 2544
+ },
+ {
+  "id": "gt-fuel-nozzles",
+  "label": "燃油喷嘴 / 分区供油",
+  "layer": "engine",
+  "sub": "GT 燃烧室",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "双油路喷嘴",
+   "旋流雾化器",
+   "主/副油路",
+   "分区供油阀",
+   "喷嘴积碳检查"
+  ],
+  "shell": false,
+  "meshes": 18,
+  "tris": 1392
+ },
+ {
+  "id": "gt-igniters",
+  "label": "点火器 / 火焰探测器",
+  "layer": "engine",
+  "sub": "GT 燃烧室",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "高能点火器 ×2",
+   "点火电缆",
+   "火焰探测器",
+   "紫外探头"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 544
+ },
+ {
+  "id": "gt-hp-turbine-casing",
+  "label": "高压涡轮机匣 / 导向叶片",
+  "layer": "engine",
+  "sub": "GT 涡轮",
+  "tags": [
+   "gt",
+   "gt-shell",
+   "gt-turb"
+  ],
+  "details": [
+   "高压涡轮机匣",
+   "导向叶片（气冷）",
+   "2 级",
+   "封严环",
+   "冷却空气腔",
+   "温度测点"
+  ],
+  "shell": true,
+  "meshes": 12,
+  "tris": 1552
+ },
+ {
+  "id": "gt-pt-casing",
+  "label": "动力涡轮机匣 / 排气扩压器",
+  "layer": "engine",
+  "sub": "GT 涡轮",
+  "tags": [
+   "gt",
+   "gt-shell",
+   "gt-turb"
+  ],
+  "details": [
+   "动力涡轮机匣",
+   "2 级静叶",
+   "排气扩压器",
+   "支撑环",
+   "振动测点"
+  ],
+  "shell": true,
+  "meshes": 11,
+  "tris": 1072
+ },
+ {
+  "id": "gt-hp-rotor",
+  "label": "高压转子 / 压气机 + 涡轮叶轮",
+  "layer": "engine",
+  "sub": "GT 转子",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "高压压气机转子",
+   "7 级动叶",
+   "2 级高压涡轮",
+   "气冷涡轮叶片",
+   "转子轴",
+   "篦齿封严",
+   "平衡配重"
+  ],
+  "shell": false,
+  "meshes": 25,
+  "tris": 5040
+ },
+ {
+  "id": "gt-pt-rotor",
+  "label": "自由动力涡轮 / 输出轴",
+  "layer": "engine",
+  "sub": "GT 转子",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "动力涡轮 2 级",
+   "自由涡轮盘",
+   "输出轴",
+   "输出法兰",
+   "联轴器",
+   "测速齿盘"
+  ],
+  "shell": false,
+  "meshes": 21,
+  "tris": 1928
+ },
+ {
+  "id": "gt-exhaust",
+  "label": "排气蜗壳 / 烟囱",
+  "layer": "engine",
+  "sub": "GT 排气",
+  "tags": [
+   "gt",
+   "gt-shell",
+   "gt-turb"
+  ],
+  "details": [
+   "排气蜗壳",
+   "膨胀节",
+   "排气烟囱",
+   "隔热层",
+   "消音器",
+   "排气温度测点"
+  ],
+  "shell": true,
+  "meshes": 6,
+  "tris": 3260
+ },
+ {
+  "id": "gt-flex-coupling",
+  "label": "燃机输出膜片联轴器",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "膜片组",
+   "中间轴",
+   "法兰",
+   "高强度螺栓",
+   "定心环",
+   "防护罩"
+  ],
+  "shell": false,
+  "meshes": 8,
+  "tris": 1224
+ },
+ {
+  "id": "gt-angle-drive",
+  "label": "上直角传动箱 / 输出换向",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "锥齿轮副",
+   "输入法兰",
+   "输出法兰",
+   "油位视镜",
+   "支承腿",
+   "吊耳"
+  ],
+  "shell": true,
+  "meshes": 13,
+  "tris": 1120
+ },
+ {
+  "id": "gt-drop-shaft",
+  "label": "竖直传动轴 / 膜片联轴器 ×2",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "竖直传动轴",
+   "膜片联轴器 ×2",
+   "卡箍"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 392
+ },
+ {
+  "id": "gt-drop-shaft-bearing",
+  "label": "竖直轴中间支承轴承座 / 悬臂支架",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "双列球面滚子轴承",
+   "轴承座",
+   "悬臂横臂",
+   "立柱",
+   "地脚板",
+   "注油嘴"
+  ],
+  "shell": false,
+  "meshes": 5,
+  "tris": 488
+ },
+ {
+  "id": "gt-cross-connect",
+  "label": "下直角传动箱 / 传动支座",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "锥齿轮副",
+   "输入法兰",
+   "输出法兰",
+   "钢制支座",
+   "地脚螺栓",
+   "放油塞"
+  ],
+  "shell": true,
+  "meshes": 8,
+  "tris": 756
+ },
+ {
+  "id": "gt-cross-shaft",
+  "label": "横向传动轴 / 轴承座",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "横向传动轴",
+   "膜片联轴器",
+   "轴承座 ×2",
+   "钢支架",
+   "卡箍"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 960
+ },
+ {
+  "id": "gt-main-gear",
+  "label": "主减速齿轮箱 / 输出法兰",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "锥齿轮副 90° 换向",
+   "输入法兰",
+   "输出法兰",
+   "油底壳",
+   "观察盖",
+   "呼吸器",
+   "吊耳",
+   "钢支座"
+  ],
+  "shell": true,
+  "meshes": 17,
+  "tris": 2616
+ },
+ {
+  "id": "gt-sss-clutch",
+  "label": "轴系接入离合器（SSS）",
+  "layer": "engine",
+  "sub": "GT 传动",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "同步自移位离合器",
+   "摩擦片组",
+   "气动执行环",
+   "接合指示",
+   "进气管"
+  ],
+  "shell": false,
+  "meshes": 6,
+  "tris": 1048
+ },
+ {
+  "id": "gt-accessory-gearbox",
+  "label": "附件齿轮箱 / 起动机",
+  "layer": "engine",
+  "sub": "GT 附件",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "附件齿轮箱",
+   "起动机",
+   "滑油泵",
+   "燃油泵",
+   "液压泵",
+   "转速传感器"
+  ],
+  "shell": true,
+  "meshes": 4,
+  "tris": 604
+ },
+ {
+  "id": "gt-mounts",
+  "label": "燃机隔振支座 / 机脚",
+  "layer": "engine",
+  "sub": "GT 支承",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "橡胶隔振垫",
+   "限位挡块",
+   "调平垫片",
+   "机脚",
+   "接地线"
+  ],
+  "shell": false,
+  "meshes": 12,
+  "tris": 864
+ },
+ {
+  "id": "gt-enclosure",
+  "label": "燃机隔声罩 / 检修平台栏杆",
+  "layer": "engine",
+  "sub": "GT 支承",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "隔声罩骨架",
+   "快开检修门",
+   "观察窗",
+   "通风百叶",
+   "消防接口"
+  ],
+  "shell": true,
+  "meshes": 9,
+  "tris": 240
+ },
+ {
+  "id": "gt-fuel-skid",
+  "label": "燃机燃油模块 / 滤器",
+  "layer": "engine",
+  "sub": "GT 附件",
+  "tags": [
+   "gt"
+  ],
+  "details": [
+   "燃油泵",
+   "双联滤器",
+   "流量计",
+   "截止阀",
+   "压力表",
+   "控制箱"
+  ],
+  "shell": true,
+  "meshes": 4,
+  "tris": 316
+ }
+]
