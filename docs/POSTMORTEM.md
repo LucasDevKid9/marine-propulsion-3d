@@ -187,10 +187,11 @@ const zEnd = NODES['pt-flange'].p[2] - (-3.35);   // 构件原点到法兰面的
 
 **最终修复**：给 app 增加 `stepWorld(dt = 0.05, frames = 1)` —— 只推进
 `sim / explode / section / flow` 的状态、不渲染；回归测试改用它推进**固定帧数**
-（例如 `stepWorld(0.05, 14)` ≡ 0.70 s 仿真时间），第 6、7 节与燃机时序 / 单缸熄火 /
-粒子淡出共 4 组等待型断言（覆盖 7 个 `check`）改为确定性步进，并把每组收进
-**单次 `evaluate`**，让同步执行期间 rAF 无法插入。正常运行时 `animate` 仍按真实 dt
-驱动，生产行为完全不变。
+（例如 `stepWorld(0.05, 14)` ≡ 0.70 s 仿真时间），`test-core.cjs` 的第 6、7 节与燃机
+时序 / 单缸熄火 / 粒子淡出、`test-dist.cjs` 的播放 / 反向，共 5 组等待型断言改为确定性
+步进，并把每组收进**单次 `evaluate`**，让同步执行期间 rAF 无法插入。
+（`test-dist.cjs` 是第三轮 CI 才暴露的最后一处：软件光栅下 `moving` 只到 0.017，
+判据要求 > 0.05。）正常运行时 `animate` 仍按真实 dt 驱动，生产行为完全不变。
 
 **实测**（改动后本地 37/37）：燃机时序 `1:0.31 → 4:0.43「高压涡轮自持」`、
 熄火后燃烧强度归零、粒子 `0.972 → 0.018`、重装配 `0.864 → 0.660`。
@@ -310,6 +311,6 @@ npm run lint:geom        # 四种构型全绿才返回 0
 | C 滑油管从泵体内部穿出 | 泵排出法兰改开在蜗壳 −z 端面，管路从法兰面接管 |
 | D 可见性规则重复 | 抽出 `partVisible()`，渲染 / 审计共用 |
 | E 审计不可复现 | `setReferencePose()` 钉死角度 **+ `pitch`/`pitchDeg` 阻尼状态量**（首次 CI 暴露漏钉），`quality.yml` 加并发组 |
-| E2 交互回归依赖机器速度 | `app.stepWorld(0.05, frames)` 显式步进固定仿真时间 + 单次 evaluate 收口；独立门禁 `test:determinism`（第二轮 CI 暴露） |
+| E2 交互 / 产物回归依赖机器速度 | `app.stepWorld(0.05, frames)` 显式步进固定仿真时间 + 单次 evaluate 收口，覆盖 `test-core` 与 `test-dist` 共 5 组；独立门禁 `test:determinism`（第二、三轮 CI 分两次暴露） |
 | F AABB 污染 | `bakeStatic` 留档子网格盒，渲染合批与审计精度解耦；1.6 m → 5 m |
 | G 无门禁 | `scripts/geom-lint.mjs` 四构型门禁，非零退出 |

@@ -37,13 +37,17 @@ const fileUrl = 'file:///' + path.resolve('./dist/index.html').replace(/\\/g, '/
   const p50 = await page.evaluate(() => window.__APP__.explode.progress);
   console.log('进度:', p50);
 
-  // 交互：播放 / 反向 / 重新装配
-  await page.evaluate(() => { window.__APP__.explode.setProgress(0); window.__APP__.explode.play(1); });
-  await page.waitForTimeout(1200);
-  const moving = await page.evaluate(() => window.__APP__.explode.progress);
-  await page.evaluate(() => window.__APP__.explode.reverse());
-  await page.waitForTimeout(600);
-  const reversed = await page.evaluate(() => window.__APP__.explode.progress);
+  // 交互：播放 / 反向。用确定性步进，不依赖软件光栅 CI 的帧率
+  // （主循环 dt 被 clamp 到 50 ms，wall-clock 1200 ms 不等于 1.2 s 仿真时间）。
+  const motion = await page.evaluate(() => {
+    const a = window.__APP__;
+    a.explode.setProgress(0); a.explode.play(1); a.stepWorld(0.05, 24); // 1.20 s 仿真时间
+    const moving = a.explode.progress;
+    a.explode.reverse(); a.stepWorld(0.05, 12);                          // 0.60 s
+    const reversed = a.explode.progress;
+    return { moving, reversed };
+  });
+  const { moving, reversed } = motion;
   console.log(`播放后 ${moving.toFixed(3)} → 反向后 ${reversed.toFixed(3)}`);
 
   // 重置到装配态并出图
