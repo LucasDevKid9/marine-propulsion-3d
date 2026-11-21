@@ -168,7 +168,15 @@ export class Simulation {
    * 报告就无法作为门禁。这里以 dt=0 走一遍 update()，
    * 让所有 animPos / animRot 由固定角度重新导出，而不改动工作状态。
    */
-  setReferencePose(crankDeg = 0) {
+  /**
+   * 审计基准位姿：把「会随时间收敛的状态量」一并钉死。
+   *
+   * state.pitch 是阻尼量（damp(pitch, pitchTarget, 1.4, dt)），页面跑了多久它就收敛到哪。
+   * 只钉曲轴角度是不够的：CI 软件光栅加载慢、本地快，CPP 桨叶转角与曲柄销环转角因此不同，
+   * 同一份模型会在 diesel/cpp 报出 4 处 cpp-blade × cpp-crank-ring 干涉（本地却是 0）。
+   * 钉住 pitch / pitchDeg 之后，报告与机器性能、加载耗时完全无关，可重放、可进 CI。
+   */
+  setReferencePose(crankDeg = 0, pitch = 0) {
     const save = {
       angle: this.angle,
       shaftAngle: this.shaftAngle,
@@ -176,14 +184,18 @@ export class Simulation {
       gtAngle: this.gtAngle,
       ptAngle: this.ptAngle,
     };
+    const stateSave = { pitch: this.state.pitch, pitchDeg: this.state.pitchDeg };
     this.angle = (crankDeg * Math.PI) / 180;
     this.shaftAngle = 0;
     this.turboAngle = 0;
     this.gtAngle = 0;
     this.ptAngle = 0;
+    this.state.pitch = pitch;
+    this.state.pitchDeg = (pitch / 100) * 32;
     this.update(0);
     return () => {
       Object.assign(this, save);
+      Object.assign(this.state, stateSave);
       this.update(0);
     };
   }

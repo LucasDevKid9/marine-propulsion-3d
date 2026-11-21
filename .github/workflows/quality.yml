@@ -6,6 +6,12 @@ on:
   pull_request:
   workflow_dispatch:
 
+# 同一分支的连续推送只保留最新一次：quality job 要占用 5173 端口并跑三套浏览器回归，
+# 并发 run 会互相污染页面状态，也会让「哪次提交是绿的」变得不可判定。
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: 构建单文件产物
