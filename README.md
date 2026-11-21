@@ -59,7 +59,7 @@
 ```bash
 npm install                 # three.js 0.187.0 版本锁定
 npm run dev                 # http://127.0.0.1:5173 热更新
-npm run build               # → dist/index.html（975,021 B，含全部 JS/CSS/贴图）
+npm run build               # → dist/index.html（975,121 B，含全部 JS/CSS/贴图）
 ```
 
 构建后**双击 `dist/index.html` 即可离线运行**，不需要服务器、不需要联网。仓库里已经带着这份构建好的单文件产物——不想装 Node 也可以直接下载 [`dist/index.html`](dist/index.html) 一个文件双击打开。
@@ -153,6 +153,10 @@ flowchart TB
 干涉 0、走管 0、链空洞 0、节点失配 0、已登记接触 38。
 没有这一步，CI 软件光栅与本地 GPU 的加载耗时差会让同一份模型跑出不同结论——
 这个坑正是在首次 CI 上暴露并修掉的（见 [缺陷复盘](docs/POSTMORTEM.md)）。
+
+**回归测试也不依赖机器速度**：交互回归用 `app.stepWorld(0.05, frames)` 推进固定帧数
+的仿真时间，而不是 `waitForTimeout(N)` 后断言「推进了多少」——主循环的 `dt` 被限制在
+50 ms，软件光栅 CI 上的 wall-clock 与仿真时间并不等价。这一步同样由 CI 暴露。
 
 | 回归 | 结果 | 实测要点 |
 |---|---|---|
@@ -249,7 +253,7 @@ marine-propulsion-3d/
 ├── .github/workflows/         quality.yml（构建 + 几何门禁 + 三项回归）
 ├── shots/                     15 张展示图 + 机器可读的清单/测试报告
 ├── PARTS.md                   186 件构件清单（运行时导出）
-└── dist/index.html            单文件产物（975,021 B）
+└── dist/index.html            单文件产物（975,121 B）
 ```
 
 ---

@@ -224,6 +224,24 @@ app.audit = (opts = {}) => {
 };
 app.auditText = (opts) => formatAudit(app.audit(opts));
 
+/**
+ * 确定性状态步进（回归测试专用钩子）。
+ *
+ * 主循环用 Math.min(0.05, clock.getDelta()) 防止切标签页后的大跳，这个设计是对的；
+ * 但无 GPU 的 CI 上帧率极低，同样的 wall-clock 里仿真时间只推进十分之一，
+ * 于是「等 700 ms 再断言进度变化」的测试会把机器性能当成隐含前提而失败。
+ * 回归测试改为调用 stepWorld(0.05, N) 推进固定 N 帧 × 50 ms，彻底与帧率解耦。
+ * 本函数只推进状态、不渲染；正常运行时 animate 仍按真实 dt 驱动，行为不变。
+ */
+app.stepWorld = (dt = 0.05, frames = 1) => {
+  for (let i = 0; i < frames; i++) {
+    sim.update(dt);
+    explode.update(dt);
+    section.update(dt);
+    flow.update(dt);
+  }
+};
+
 /* 选中框 */
 const boxGeo = new THREE.BufferGeometry();
 const selBox = new THREE.Box3Helper(new THREE.Box3(), 0x4fd8f0);

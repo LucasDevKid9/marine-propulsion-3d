@@ -246,30 +246,28 @@ const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
     sanity.nan === 0 && sanity.far.length === 0,
     `NaN ${sanity.nan}，超距 ${sanity.far.length}${sanity.far.length ? ':' + sanity.far.slice(0, 3) : ''}`);
 
-  /* ---------- 6. 暂停 / 继续 / 反向 ---------- */
-  await page.evaluate(() => { const a = window.__APP__; a.explode.setProgress(0.2); a.explode.play(1); });
-  await page.waitForTimeout(900);
+  /* ---------- 6. 暂停 / 继续 / 反向 ----------
+     用 app.stepWorld(0.05, N) 推进固定帧数，不依赖 rAF 帧率。
+     CI 无 GPU 时 dt 被 clamp 到 50 ms，wall-clock 等待会随机器性能漂移。 */
+  await page.evaluate(() => { const a = window.__APP__; a.explode.setProgress(0.2); a.explode.play(1); a.stepWorld(0.05, 18); });
   await page.evaluate(() => window.__APP__.explode.pause());
   const pp1 = await page.evaluate(() => window.__APP__.explode.progress);
-  await page.waitForTimeout(600);
+  await page.evaluate(() => window.__APP__.stepWorld(0.05, 12));
   const pp2 = await page.evaluate(() => window.__APP__.explode.progress);
   check('暂停后进度不再推进', Math.abs(pp2 - pp1) < 1e-9, `${pp1.toFixed(4)} → ${pp2.toFixed(4)}`);
 
-  await page.evaluate(() => window.__APP__.explode.play(1));
-  await page.waitForTimeout(700);
+  await page.evaluate(() => { const a = window.__APP__; a.explode.play(1); a.stepWorld(0.05, 14); });
   const pp3 = await page.evaluate(() => window.__APP__.explode.progress);
   check('继续后进度恢复推进', pp3 > pp2 + 0.02, `${pp2.toFixed(4)} → ${pp3.toFixed(4)}`);
 
-  await page.evaluate(() => window.__APP__.explode.reverse());
-  await page.waitForTimeout(700);
+  await page.evaluate(() => { const a = window.__APP__; a.explode.reverse(); a.stepWorld(0.05, 14); });
   const pp4 = await page.evaluate(() => window.__APP__.explode.progress);
   check('反向播放使进度回退', pp4 < pp3 - 0.02, `${pp3.toFixed(4)} → ${pp4.toFixed(4)}`);
 
   /* ---------- 7. 重新装配 ---------- */
-  await page.evaluate(() => { const a = window.__APP__; a.explode.setProgress(1); a.explode.reassemble(); });
-  await page.waitForTimeout(800);
+  await page.evaluate(() => { const a = window.__APP__; a.explode.setProgress(1); a.explode.reassemble(); a.stepWorld(0.05, 16); });
   const rp1 = await page.evaluate(() => window.__APP__.explode.progress);
-  await page.waitForTimeout(1200);
+  await page.evaluate(() => window.__APP__.stepWorld(0.05, 24));
   const rp2 = await page.evaluate(() => window.__APP__.explode.progress);
   check('重新装配使进度持续回落', rp2 < rp1 && rp1 < 1, `${rp1.toFixed(3)} → ${rp2.toFixed(3)}`);
   // 直接收敛到 0 后检查复位
@@ -422,13 +420,13 @@ const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
   check('轴系随转速旋转、可制动锁止', shaftRot.rotating && shaftRot.brake === true,
     `旋转 ${shaftRot.rotating}，制动状态 ${shaftRot.brake}`);
 
-  const gtSeq = await page.evaluate(async () => {
+  const gtSeq = await page.evaluate(() => {
     const a = window.__APP__;
     a.setConfig('gas');
     a.sim.startGT();
     const steps = [];
     for (let i = 0; i < 9; i++) {
-      await new Promise(r => setTimeout(r, 700));
+      a.stepWorld(0.05, 14); // 0.70 s 仿真时间，与机器帧率无关
       steps.push({ step: a.sim.state.gtStep, speed: +a.sim.state.gtSpeed.toFixed(2) });
     }
     const rotorMoved = Math.abs(a.reg.get('gt-hp-rotor').group.rotation.z) > 1e-4;
@@ -439,36 +437,36 @@ const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
     gtSeq.steps.some(s => s.step > 0) && speedUp && gtSeq.rotorMoved,
     `${gtSeq.steps.map(s => s.step + ':' + s.speed).join(' -> ')}，最终「${gtSeq.label}」`);
 
-  const misfire = await page.evaluate(async () => {
+  const misfire = await page.evaluate(() => {
     const a = window.__APP__;
     a.setConfig('diesel');
     a.sim.setTelegraph(3);
-    const peak = async (ms) => {
+    // 逐帧采样燃烧脉冲峰值：固定 52 帧 × 50 ms = 2.6 s 仿真时间
+    const peak = (frames) => {
       let m = 0;
-      const t0 = performance.now();
-      while (performance.now() - t0 < ms) {
+      for (let i = 0; i < frames; i++) {
+        a.stepWorld(0.05, 1);
         m = Math.max(m, ...a.reg.get('combustion-3').group.children.map(c => c.material.emissiveIntensity));
-        await new Promise(r => setTimeout(r, 40));
       }
       return m;
     };
-    const before = await peak(2600);
+    const before = peak(52);
     a.sim.setCylinderFiring(2, false);
-    const after = await peak(2600);
+    const after = peak(52);
     a.sim.setCylinderFiring(2, true);
     return { before, after, flag: a.sim.state.firingEnabled[3] };
   });
   check('单缸熄火使该缸燃烧亮度下降', misfire.after < misfire.before + 1e-6,
     `3 号缸燃烧强度 ${misfire.before.toFixed(2)} -> ${misfire.after.toFixed(2)}`);
 
-  const flow = await page.evaluate(async () => {
+  const flow = await page.evaluate(() => {
     const a = window.__APP__;
     a.flow.toggle(true);
-    await new Promise(r => setTimeout(r, 800));
+    a.stepWorld(0.05, 16); // 0.80 s 仿真时间：淡入收敛
     const on = { amount: +a.flow.amount.toFixed(3), visible: a.flow.group.visible,
       pts: a.flow.gt.points.geometry.attributes.position.count + a.flow.diesel.points.geometry.attributes.position.count };
     a.flow.toggle(false);
-    await new Promise(r => setTimeout(r, 900));
+    a.stepWorld(0.05, 18); // 0.90 s 仿真时间：淡出收敛
     const off = { amount: +a.flow.amount.toFixed(3), visible: a.flow.group.visible };
     return { on, off };
   });
